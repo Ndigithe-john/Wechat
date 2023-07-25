@@ -86,6 +86,7 @@ async function updatePosts(req, res, next) {
     res.status(400).send(error.message);
   }
 }
+
 async function deletePost(req, res, next) {
   try {
     const user = req.user;

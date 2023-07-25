@@ -19,7 +19,7 @@ userRoutes.post("/logout", (req, res, next) => {
   res.send("user logged out");
 });
 userRoutes.post("/forgotPassword", forgotPassword);
-userRoutes.post("/profile", manageSessions, profileUpdate);
+userRoutes.put("/profile", manageSessions, profileUpdate);
 userRoutes.patch("/resetPassword/:token", resetPassword);
 userRoutes.get("/account", manageSessions, myAccount);
 module.exports = userRoutes;

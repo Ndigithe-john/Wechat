@@ -221,8 +221,8 @@ async function resetPassword(req, res, next) {
 async function profileUpdate(req, res, next) {
   try {
     const profile_update = req.body;
-    const { value } = profileValidator(profile_update);
-    console.log(value);
+    // const { value } = profileValidator(profile_update);
+    // console.log(value);
     const user = req.session.user;
     console.log(user.UserID);
     const { UserName, Email, Profile, Bio } = profile_update;

@@ -5,8 +5,10 @@ async function notifications(req, res, next) {
     const user = req.user;
 
     if (pool.connected) {
-      const query = `SELECT NotificationType, NotificationMessage, CreatedAt, IsRead FROM Wechat.Notifications WHERE UserID = '${user.UserID}'`;
-      const results = await pool.request().query(query);
+      const results = await pool
+        .request()
+        .input("UserID", user.UserID)
+        .execute("GetNotificationsByUserID");
 
       res.status(200).json({
         status: "success",
